@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Cormac&rsquo;s Laptops</title>
+<link
+	href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css"
+	rel="stylesheet" />
+<link rel="stylesheet" type="text/css"
+	href="resources/bootstrap/css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css"
+	href="resources/css/cormacLaptops.css">
+<link rel="stylesheet" type="text/css"
+	href="//cdn.datatables.net/1.10.13/css/jquery.dataTables.min.css">
+<link rel="stylesheet"
+	href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+<link rel="stylesheet" type="text/css"
+	href="https://cdnjs.cloudflare.com/ajax/libs/dropzone/4.3.0/dropzone.css">
+
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<script type="text/javascript"
+	src="https://cdnjs.cloudflare.com/ajax/libs/dropzone/4.3.0/dropzone.js"></script>
+<script src="backbone/lib/underscore.js" type="text/javascript"></script>
+<script src="backbone/lib/backbone-min.js" type="text/javascript"></script>
+
+<script src="resources/js/model/LaptopModel.js" type="text/javascript"></script>
+
+<script src="resources/js/views/detailsView.js" type="text/javascript"></script>
+<script src="resources/js/views/tableRowView.js" type="text/javascript"></script>
+<script src="resources/js/views/laptopListView.js" type="text/javascript"></script>
+
+<script src="resources/js/backboneMain.js" type="text/javascript"></script>
+<script src="resources/js/laptopsMainScript.js"></script>
+<script src="resources/bootstrap/js/bootstrap.js" type="text/javascript"></script>
+<script
+	src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"
+	type="text/javascript"></script>
+<script async defer
+	src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDSDHAD9ngOBiS1GbHEzlb9Wp-JjCbmXu8&callback=initMap">
+    </script>
+</head>
+<body>
+	<header>
+		<h1 class="hedaerH1">
+			<span id="headerText"> Welcome To Cormac&rsquo;s Laptops </span>
+		</h1>
+		<hr>
+	</header>
+
+	<nav class="navbar navbar-inverse">
+		<div class="container">
+			<!-- Brand and toggle get grouped for better mobile display -->
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed"
+					data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"
+					aria-expanded="false">
+					<span class="sr-only">Toggle navigation</span> <span
+						class="icon-bar"></span> <span class="icon-bar"></span> <span
+						class="icon-bar"></span>
+				</button>
+			</div>
+
+			<!-- Collect the nav links, forms, and other content for toggling -->
+			<div class="collapse navbar-collapse"
+				id="bs-example-navbar-collapse-1">
+				<!-- Nav tabs -->
+				<ul class="nav nav-pills" role="tablist">
+					<li role="presentation" class="active"><a href="#home"
+						aria-controls="home" role="tab" data-toggle="tab">Home</a></li>
+					<li role="presentation"><a href="#laptops"
+						aria-controls="laptops" role="tab" data-toggle="tab">Laptops</a></li>
+					<li role="presentation"><a href="#RAM" aria-controls="RAM"
+						role="tab" data-toggle="tab">Search</a></li>
+					<li role="presentation" id="addLaptopTab"><a href="#addNew"
+						aria-controls="addNew" role="tab" onclick="showForm()"
+						data-toggle="tab">Add New Laptop</a></li>
+				</ul>
+			</div>
+			<!-- /.navbar-collapse -->
+		</div>
+		<!-- /.container-fluid -->
+	</nav>
+
+	<!-- Tab panes -->
+	<article>
+		<div class="tab-content">
+
+			<div role="tabpanel" class="tab-pane active" id="home">
+				<div class="row">
+					<div class="col-md-1"></div>
+					<div id="centerDiv" class="col-md-10">
+
+						<div class="row">
+							<div class="col-md-1" id="container"></div>
+							<div id="innerCarousel" class="col-md-5">
+
+								<div id="carousel-example-generic" class="carousel slide"
+									data-ride="carousel">
+									<!-- Indicators -->
+									<ol class="carousel-indicators">
+										<li data-target="#carousel-example-generic" data-slide-to="0"
+											class="active"></li>
+										<li data-target="#carousel-example-generic" data-slide-to="1"></li>
+										<li data-target="#carousel-example-generic" data-slide-to="2"></li>
+									</ol>
+
+									<!-- Wrapper for slides -->
+									<div class="carousel-inner" role="listbox">
+										<div class="item active">
+											<img src="resources/img/laptopMain.png" alt="...">
+											<div class="carousel-caption">...</div>
+										</div>
+										<div class="item">
+											<img src="resources/img/custom.jpg" alt="...">
+											<div class="carousel-caption"></div>
+										</div>
+										<div class="item">
+											<img src="resources/img/lenovo.jpg" alt="...">
+											<div class="carousel-caption"></div>
+										</div>
+									</div>
+
+									<!-- Controls -->
+									<a class="left carousel-control"
+										href="#carousel-example-generic" role="button"
+										data-slide="prev"> <span
+										class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+										<span class="sr-only">Previous</span>
+									</a> <a class="right carousel-control"
+										href="#carousel-example-generic" role="button"
+										data-slide="next"> <span
+										class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+										<span class="sr-only">Next</span>
+									</a>
+								</div>
+
+							</div>
+
+							<div id="colRight" class="col-md-5">
+								<h2>About Us</h2>
+								<p>We are a well-established Athlone-based computer sales
+									and services business that has been in operation since
+									September 2000. Our retail shop and computer repair centre on
+									Abbey Street has become a busy destination for customers who
+									wish to purchase the latest technology or to have their
+									computer serviced by qualified technicians.</p>
+								<p>We have highly experienced staff can also offer sales
+									advice to small businesses owners and provide IT support to
+									them so that their systems are kept running at their optimum.</p>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-md-1"></div>
+							<div id="story" class="col-md-5">
+								<h2>Our Story</h2>
+								<p>We can offer a wide range of products and services.
+									Whether you need to purchase ink for your home printer, or a
+									server computer for your business. Whether you need get a
+									laptop repaired or a computer network designed. It is
+									ultimately our goal to offer a one-stop facility for all home
+									and business IT needs, including both sales and servicing. In
+									this way we can offer greater perceived value for the customer
+									than many other local shops who only either offer sales or
+									services. Although the retail consumer electronics market is
+									highly competitive, we can offer value added service to all of
+									the goods that we have to offer you, from purchase advice
+									through to demonstration and support. We dont see our service
+									offering as just a commodity, it is what makes us outstanding
+									in the face of our competitors.</p>
+								<h3>Services</h3>
+								<p>We have qualified technicians on hand to fix your
+									problem. Our expertise is second to none and unlike other
+									repair shops we will fix the problem and not just reset your
+									machine. Our customer care starts the second you walk in the
+									door and we will talk to you in a language that you will
+									understand. Every repair is logged into our system where-after
+									you will receive a job reference number by SMS to your phone.
+									Our rates are reasonable as we believe that you pay for what
+									you get.</p>
+							</div>
+
+							<div id="colRight" class="col-md-5">
+								<h3>Find Us</h3>
+								<div id="map" style="width: 400px; height: 400px;"></div>
+							</div>
+							<div class="col-md-1"></div>
+						</div>
+					</div>
+					<div class="col-md-1"></div>
+				</div>
+			</div>
+
+
+			<!-- Page Content -->
+			<div role="tabpanel" class="tab-pane" id="laptops">
+				<div class="row">
+					<div class="col-md-1"></div>
+					<div id="centerDiv" class="col-md-10">
+						<table id="laptopsTbl"
+							class="display table table-bordered table-striped table-responsive">
+							<thead>
+								<tr>
+									<th>Make</th>
+									<th>Model</th>
+									<th>RAM</th>
+									<th>Price</th>
+									<th>Delete</th>
+									<th>See More</th>
+								</tr>
+							</thead>
+							<tbody>
+							</tbody>
+						</table>
+
+						<div class="container">
+							<div style="display: none;" class="modal modal-wide fade" id="myModal"
+								tabindex='-1' role="dialog" aria-hidden="true">
+								<div class="modal-dialog">
+									<div id="modalContent" class="modal-content"></div>
+								</div>
+							</div>
+						</div>
+
+
+					</div>
+					<div class="col-md-1"></div>
+				</div>
+			</div>
+
+			<div role="tabpanel" class="tab-pane" id="RAM">
+				<div class="row">
+					<div class="col-md-1"></div>
+					<div id="centerDiv" class="col-md-10">
+						<div class="row">
+							<div class="col-md-6">
+								<div id="ramSearch">
+									<label for="amount">RAM Range : </label> <input type="text"
+										id="amount" readonly
+										style="border: 0; color: #f6931f; font-weight: bold;">
+									<br> <br>
+									<p id="slider-range"></p>
+									<button type="button" id="btnSearchRam"
+										class="btn btn-success btn-block" onclick="listTheLaptops()">Search</button>
+								</div>
+							</div>
+							<div class="col-md-6">
+								<div id="ramSearch">
+									<label for="make">Laptop Make : </label> <br> <input
+										type="text" id="makeSearch" style="font-weight: bold;">
+									<br> <br>
+									<button type="button" id="btnSearchMake"
+										class="btn btn-success btn-block" onclick="searchByMake()">Search</button>
+								</div>
+							</div>
+						</div>
+						<br>
+
+						<table id="searchTbl"
+							class="table table-bordered table-striped table-responsive">
+							<thead>
+								<tr>
+									<th>Make</th>
+									<th>Model</th>
+									<th>RAM</th>
+									<th>Price</th>
+									<th>Hard Drive</th>
+									<th>Processor</th>
+								</tr>
+							</thead>
+							<tbody id="laptopList"></tbody>
+						</table>
+					</div>
+					<div class="col-md-1"></div>
+				</div>
+			</div>
+
+			<div role="tabpanel" class="tab-pane" id="addNew">
+				<div class="row">
+					<div class="col-md-1"></div>
+					<div id="centerDiv" class="col-md-10">
+
+						<div id="addLaptopForm"></div>
+
+					</div>
+					<div class="col-md-1"></div>
+				</div>
+			</div>
+		</div>
+	</article>
+
+	<div class="row">
+		<div class="col-md-1"></div>
+		<div class="col-md-10">
+			<footer
+				style="display: table; text-align: center; margin-left: auto; margin-right: auto;">
+				<p>&#9400; Cormac Hallinan</p>
+				<p>
+					Email me at : <a href="mailto:someone@example.com">
+						a00237795@student.ait.ie</a>
+				</p>
+			</footer>
+		</div>
+		<div class="col-md-1"></div>
+	</div>
+
+</body>
+<script src="//cdn.datatables.net/1.10.13/js/jquery.dataTables.min.js"
+	type="text/javascript"></script>
+
+<script type="text/template" id="laptopModal">
+<div class="modal-header">
+	<button type="button" class="close" data-dismiss="modal">&times;</button>
+	<h4 class="modal-title">View Laptop</h4>
+	<button id="btnDisable" type="button" class="btn btn-info" onClick="enableDisableTextboxes()">Turn
+												Editing On</button>
+	<!-- <button id="btnImage" type="button" class="btn btn-info" onClick="renderImageView()">View Image</button> -->
+
+</div>
+<div class="modal-body">
+
+<div id="modalLeftDiv">
+<form id="formAddLaptop">
+		<div class="form-group">
+			<label for="id"></label> <input type="text"
+				class="form-control" id="modalId" value="<%= id %>" disabled>
+		</div>
+		<div class="form-group">
+			<label for="make">Make : </label> <input type="text"
+				class="form-control" id="modalMake" value="<%= make %>" disabled>
+		</div>
+		<div class="form-group">
+			<label for="model">Model : </label> <input type="text"
+				class="form-control" id="modalModel" value="<%= model %>" disabled>
+		</div>
+		<div class="form-group">
+			<label for="price">Price : </label> <input type="number"
+				class="form-control" id="modalPrice" value="<%= price %>"" disabled>
+		</div>
+		<div class="form-group">
+			<label for="ram">Ram : </label> <input type="number"
+				class="form-control" id="modalRam" value="<%= ram %>"  disabled>
+		</div>
+		<div class="form-group">
+			<label for="hardDrive">hard Drive : </label> <input
+				type="number" class="form-control" id="modalHardDrive"
+			 value="<%= hardDrive %>" 	disabled>
+		</div>
+		<div class="form-group">
+			<label for="processor">Processor: </label> <input
+				type="text" class="form-control" id="modalProcessor"
+			 value="<%= processor %>" 	disabled>
+		</div>
+		<div class="form-group">
+			<label for="description">Description</label>
+			<textarea class="form-control" id="modalDescription"
+				rows="3" disabled><%= description %></textarea>
+		</div>
+		<button type="button" id="btnEditLaptop"
+			class="btn btn-primary btn-lg active" value="<%= model %>"  disabled>Edit
+			Laptop</button>
+</form>
+</div>
+
+<div id="modalRightDiv">
+<br>
+<figure>
+  <img src="resources/img/stock/<%= model %>.jpg" alt="Please Upload An Image" onError="resources/img/stock/placeholder.jpg" width="350" height="250">
+  <figcaption id="laptopCaption"><%= description %></figcaption>
+</figure>
+<br>
+<br>
+<form action="rest/image" method="post"
+							enctype="multipart/form-data" class="dropzone"
+							id="my-awesome-dropzone">
+</form>
+</div>
+
+</div>
+<div class="modal-footer">
+	<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+</div>
+</script>
+
+<script type="text/template" id="addLaptop">
+<form id="formAddLaptop">
+	<div class="form-group">
+		<label for="make">Make : </label> <input type="text"
+			class="form-control" id="make" placeholder="Enter Make"
+			required size="4">
+	</div>
+	<div class="form-group">
+		<label for="model">Model : </label> <input type="text"
+			class="form-control" id="model" placeholder="Enter Model"
+			required size="4">
+	</div>
+	<div class="form-group">
+		<label for="price">Price : </label> <input type="number"
+			class="form-control" id="price" placeholder="Enter Price"
+			required size="4">
+	</div>
+	<div class="form-group">
+		<label for="ram">Ram : </label> <input type="number"
+			class="form-control" id="ram" placeholder="Enter Ram" required
+			size="4">
+	</div>
+	<div class="form-group">
+		<label for="hardDrive">hard Drive : </label> <input
+			type="number" class="form-control" id="hardDrive"
+			placeholder="Enter Hard Drive" required size="4">
+	</div>
+	<div class="form-group">
+		<label for="processor">Processor: </label> <input type="text"
+			class="form-control" id="processor"
+			placeholder="Enter Processor" required size="4">
+	</div>
+	<div class="form-group">
+		<label for="description">Description</label>
+		<textarea class="form-control" id="description" rows="3"
+			required></textarea>
+	</div>
+	<button type="button" id="btnAddLaptop"
+		class="btn btn-success  btn-block btn-lg active">Add
+		Laptop</button>
+</form>
+</script>
+
+<script type="text/template" id="imageFigure">
+<div class="modal-header">
+	<button type="button" class="close" data-dismiss="modal">&times;</button>
+	<h4 class="modal-title">View Image</h4>
+	<button id="btnDisable" type="button" class="btn btn-info" onClick="viewLaptopDetails()">View Laptop Details</button>
+	<button id="btnImage" type="button" class="btn btn-info" onClick="renderImageUpload()">Upload Image</button>
+</div>
+ <div class="modal-body">
+<form>
+<figure>
+  <img src="resources/img/stock/<%= model %>.jpg" alt="Please Upload An Image" onError="resources/img/stock/placeholder.jpg" width="350" height="250">
+  <figcaption id="laptopCaption"><%= description %></figcaption>
+</figure>
+</form>
+</div>
+<div class="modal-footer">
+	<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+</div>
+</script>
+
+
+
+<script type="text/template" id="tblRow">
+	<td><%=make%></td>
+	<td><%=model%></td>
+	<td><%=ram%></td>
+	<td>&euro;<%=price%></td>
+	<td><%=hardDrive%></td>
+	<td><%=processor%></td>
+</script>
+
+
+</html>
+

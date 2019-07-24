@@ -1,0 +1,10 @@
+{
+  "make": "Toshiba",
+  "model": "A12",
+  "price": 150,
+  "ram": 8,
+  "hardDrive": 500,
+  "processor": "i3",
+  "description": "a great new laptop",
+  "image": null
+}

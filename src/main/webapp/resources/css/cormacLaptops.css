@@ -1,0 +1,213 @@
+html {
+	height: 100%;
+}
+
+body {
+	text-align: center;
+	min-height: 100%;
+	background-color: #e6e6e6;
+}
+
+a:hover {
+	color: red;
+	cursor: pointer;
+}
+
+#laptopsRamTbl {
+	display: none;
+}
+
+footer {
+	display: table;
+	text-align: center;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+#headerText {
+	color: #4040B2;
+	font-style: italic;
+	font-weight: 900;
+}
+
+h1.hedaerH1 {
+	color: #fff;
+	text-shadow: 13px 13px 16px rgba(0, 0, 0, 0.33);
+	font: 52px/52px Georgia, Times, serif;
+	text-transform: uppercase;
+}
+
+h1 h2 h3 h4 h5 h6 {
+	font-weight: 900;
+}
+
+thead {
+	background-color: #e6e6e6;
+	vertical-align: middle;
+}
+
+tfoot {
+	background-color: #e6e6e6;
+}
+
+#centerDiv {
+	padding-top: 25px;
+	padding-bottom: 10px;
+	padding-left: 70px;
+	padding-right: 70px;
+	border-radius: 15px;
+	background: #e6e6e6;
+	background: -webkit-linear-gradient(#e3e8e7, #d1d6d6, #e3e8e7);
+	background: -o-linear-gradient(#e3e8e7, #d1d6d6, #e3e8e7);
+	background: -moz-linear-gradient(#e3e8e7, #d1d6d6, #e3e8e7);
+	background: linear-gradient(#e3e8e7, #d1d6d6, #e3e8e7);
+}
+
+img {
+	height: 400px;
+}
+
+input {
+	size: 20px;
+	text-align: center;
+}
+
+input.placeholder {
+	text-align: center;
+}
+
+.carousel-inner>.item>img, .carousel-inner>.item>a>img {
+	align-self: left;
+	display: block;
+	min-width: 100%;
+	height: 250px !important;
+}
+
+.carousel-inner>.item>img {
+	margin: 0 auto;
+}
+
+#amount {
+	background-color: rgba(0, 0, 0, 0);
+	color: white;
+	border: none;
+	outline: none;
+	width: auto;
+	/*text-align: left;*/
+	padding: 2px;
+}
+
+#ramSearch {
+	width: 50%;
+	margin: 0 auto;
+	align-content: center;
+	padding-left: 3%;
+}
+
+#formAddLaptop {
+	padding-left: 25%;
+	padding-right: 25%;
+}
+
+#formAddLaptop input {
+	border-radius: 2px;
+	font-weight: bold;
+	color: black;
+}
+
+p {
+	font-weight: 700;
+}
+
+footer {
+	padding-top: 4px;
+	border-style: solid;
+	border-radius: 20px;
+	width: 100%;
+	/*padding-top: 25px;
+    padding-bottom: 10px;*/
+	padding-left: 70px;
+	padding-right: 70px;
+	border-radius: 15px;
+	background: #e6e6e6; /* For browsers that do not support gradients */
+	background: -webkit-linear-gradient(left, #d1d6d6, #e3e8e7, #d1d6d6);
+	/* For Safari 5.1 to 6.0 */
+	background: -o-linear-gradient(right, #d1d6d6, #e3e8e7, #d1d6d6);
+	/* For Opera 11.1 to 12.0 */
+	background: -moz-linear-gradient(right, #d1d6d6, #e3e8e7, #d1d6d6);
+	/* For Firefox 3.6 to 15 */
+	background: linear-gradient(to right, #d1d6d6, #e3e8e7, #d1d6d6);
+	/* Standard syntax */
+}
+
+nav {
+	width: 102%;
+	padding-top: 1px;
+	padding-bottom: -2px;
+}
+
+.navbar-inverse .navbar-nav {
+	display: inline-block;
+	float: none;
+}
+
+.navbar-inverse .collapse navbar-collapse {
+	text-align: center;
+}
+
+body {
+	width: 98%;
+}
+
+header {
+	border-radius: 30px;
+	display: inline-block;
+	width: 102%;
+	background: #e6e6e6; /* For browsers that do not support gradients */
+	background: -webkit-linear-gradient(left, #d1d6d6, #e3e8e7, #d1d6d6);
+	/* For Safari 5.1 to 6.0 */
+	background: -o-linear-gradient(right, #d1d6d6, #e3e8e7, #d1d6d6);
+	/* For Opera 11.1 to 12.0 */
+	background: -moz-linear-gradient(right, #d1d6d6, #e3e8e7, #d1d6d6);
+	/* For Firefox 3.6 to 15 */
+	background: linear-gradient(to right, #d1d6d6, #e3e8e7, #d1d6d6);
+	/* Standard syntax */
+}
+
+#story p {
+	text-align: left;
+}
+
+#colRight {
+	padding-left: 10%;
+}
+
+#my-awesome-dropzone {
+	border-radius: 30px;
+	border: 5px dashed #a1bae2;
+	background-color: #E6E6FA;
+}
+
+#searchTbl {
+	visibility: hidden;
+}
+
+#modalRightDiv {
+	float: right;
+	margin-right: 20px;
+}
+
+#modalLeftDiv {
+	float: left;
+	width: 60%;
+	margin-left: -75px;
+}
+
+.modal.modal-wide .modal-dialog {
+	width: 60%;
+}
+
+body .modal-body {
+	height: auto;
+	overflow: auto;
+}

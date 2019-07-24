@@ -1,0 +1,11 @@
+{
+	"make": "toshiba",
+  	"model": "ZX12",
+  	"price": 750,
+  	"ram": 4,
+  	"hardDrive": 1000,
+  	"processor": "i7",
+  	"description": "Updated Desc",
+  	"image": null,
+  	"id": 3
+}
